@@ -9,13 +9,13 @@ export default function Notas({ navigation }) {
                 <TouchableOpacity
                     onPress={() => navigation.navigate("Home")}
                 >
-                    <Ionicons name="arrow-back-circle-sharp" size={30} color="black" />
+                    <Ionicons name="arrow-back-circle-sharp" size={35} color="black" />
                 </TouchableOpacity>
 
                 <TouchableOpacity
                     onPress={() => navigation.navigate("Config")}
                 >
-                    <Ionicons name="menu-outline" size={30} color="black" />
+                    <Ionicons name="menu-outline" size={35} color="black" />
                 </TouchableOpacity>
             </View>
             <View>
@@ -27,7 +27,7 @@ export default function Notas({ navigation }) {
                 <TouchableOpacity
                     onPress={() => navigation.navigate("Home")}
                 >
-                    <Ionicons name="home" size={24} color="black" />
+                    <Ionicons name="home" size={35} color="black" />
                 </TouchableOpacity>
 
                 <View style={styles.containerleft}>
