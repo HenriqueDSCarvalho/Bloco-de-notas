@@ -1,20 +1,31 @@
-import { View, Text, StyleSheet, Button, TouchableOpacity } from 'react-native';
-import React from 'react';
-
-import { AntDesign } from '@expo/vector-icons';
-
+import { View, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
+import { Ionicons, FontAwesome, SimpleLineIcons } from '@expo/vector-icons';
 
 export default function Home({ navigation }) {
     return (
-        <View>
-            <Button
-                title='navigate'
-                onPress={() => navigation.navigate("Notas")}
-            />
+        <View style={styles.container}>
 
-            <AntDesign name="addfile" size={24} color="black" />
+            <View style={styles.topoView}>
+                <TouchableOpacity>
+                    <FontAwesome name="search" size={24} color="black" />
+                </TouchableOpacity>
 
+                <TextInput
+                    style={styles.textInput}
+                />
 
+                <TouchableOpacity>
+                    <SimpleLineIcons name="menu" size={24} color="black" />
+                </TouchableOpacity>
+            </View>
+
+           
+                <TouchableOpacity style={styles.BottonAdd}
+                    onPress={() => navigation.navigate("Notas")}
+                >
+                    <Ionicons name="add-circle" size={30} color="black" />
+                </TouchableOpacity>
+            
 
         </View>
     );
@@ -22,7 +33,25 @@ export default function Home({ navigation }) {
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1
+    },
+    topoView: {
+        padding: 10,
+        flexDirection: 'row-reverse',
+        justifyContent: 'space-between'
+    },
+    textInput: {
+        padding: 4,
+        width: 200,
+        borderWidth: 1
+    },
+    BottonAdd: {
+        padding: 4,
+        position: 'relative',
+        flexDirection: 'row-reverse',
+        
 
     }
+
 
 });
