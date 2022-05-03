@@ -14,18 +14,20 @@ export default function Home({ navigation }) {
                     style={styles.textInput}
                 />
 
-                <TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => navigation.navigate("Config")}
+                >
                     <SimpleLineIcons name="menu" size={24} color="black" />
                 </TouchableOpacity>
             </View>
 
-           
-                <TouchableOpacity style={styles.BottonAdd}
-                    onPress={() => navigation.navigate("Notas")}
-                >
-                    <Ionicons name="add-circle" size={30} color="black" />
-                </TouchableOpacity>
-            
+
+            <TouchableOpacity style={styles.BottonAdd}
+                onPress={() => navigation.navigate("Notas")}
+            >
+                <Ionicons name="add-circle" size={30} color="black" />
+            </TouchableOpacity>
+
 
         </View>
     );
@@ -33,23 +35,25 @@ export default function Home({ navigation }) {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        padding: 10,
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        
     },
     topoView: {
-        padding: 10,
         flexDirection: 'row-reverse',
         justifyContent: 'space-between'
     },
     textInput: {
-        padding: 4,
+
         width: 200,
         borderWidth: 1
     },
     BottonAdd: {
-        padding: 4,
         position: 'relative',
         flexDirection: 'row-reverse',
-        
+
 
     }
 
