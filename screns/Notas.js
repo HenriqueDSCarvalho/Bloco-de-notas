@@ -16,7 +16,11 @@ export default function Notas({ navigation }) {
                 <TouchableOpacity
                     onPress={() => navigation.navigate("Config")}
                 >
+<<<<<<< HEAD
                     <SimpleLineIcons name="menu" size={24} color="black" />
+=======
+                    <Ionicons name="menu-outline" size={35} color="black" />
+>>>>>>> ba19ef5510b7ed7965c632512273687d62d40967
                 </TouchableOpacity>
             </View>
             <View>
