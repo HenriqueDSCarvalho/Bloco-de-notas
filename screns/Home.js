@@ -7,11 +7,7 @@ export default function Home({ navigation }) {
 
             <View style={styles.topoView}>
                 <TouchableOpacity>
-<<<<<<< HEAD
-                    <FontAwesome name="search" size={30} color="black" />
-=======
                     <FontAwesome name="search" size={35} color="black" />
->>>>>>> ba19ef5510b7ed7965c632512273687d62d40967
                 </TouchableOpacity>
                 <TextInput
                     style={styles.textInput}
@@ -28,11 +24,7 @@ export default function Home({ navigation }) {
             <TouchableOpacity style={styles.BottonAdd}
                 onPress={() => navigation.navigate("Notas")}
             >
-<<<<<<< HEAD
-                <Ionicons name="add-circle" size={35} color="black" />
-=======
                 <Ionicons name="add-circle" size={40} color="black" />
->>>>>>> ba19ef5510b7ed7965c632512273687d62d40967
             </TouchableOpacity>
 
 
