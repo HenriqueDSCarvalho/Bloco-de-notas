@@ -1,4 +1,3 @@
-import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import Home from "./screns/Home";
 import Notas from "./screns/Notas";

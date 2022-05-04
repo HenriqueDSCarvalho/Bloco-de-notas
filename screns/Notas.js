@@ -1,21 +1,22 @@
 import { View, TouchableOpacity, StyleSheet, TextInput } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-
+import { Ionicons, SimpleLineIcons } from '@expo/vector-icons';
 
 export default function Notas({ navigation }) {
     return (
         <View style={styles.container}>
             <View style={styles.containerTop}>
+
                 <TouchableOpacity
                     onPress={() => navigation.navigate("Home")}
                 >
-                    <Ionicons name="arrow-back-circle-sharp" size={30} color="black" />
+                    <Ionicons name="arrow-back-circle-sharp" size={35} color="black" />
                 </TouchableOpacity>
+
 
                 <TouchableOpacity
                     onPress={() => navigation.navigate("Config")}
                 >
-                    <Ionicons name="menu-outline" size={30} color="black" />
+                    <SimpleLineIcons name="menu" size={24} color="black" />
                 </TouchableOpacity>
             </View>
             <View>
@@ -27,7 +28,7 @@ export default function Notas({ navigation }) {
                 <TouchableOpacity
                     onPress={() => navigation.navigate("Home")}
                 >
-                    <Ionicons name="home" size={24} color="black" />
+                    <Ionicons name="home" size={35} color="black" />
                 </TouchableOpacity>
 
                 <View style={styles.containerleft}>
@@ -50,7 +51,7 @@ export default function Notas({ navigation }) {
 
 const styles = StyleSheet.create({
     container: {
-        padding: 10,
+        padding: 15,
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'space-between'
@@ -66,5 +67,6 @@ const styles = StyleSheet.create({
     },
     containerleft: {
         flexDirection: 'row'
-    }
+    },
+
 });

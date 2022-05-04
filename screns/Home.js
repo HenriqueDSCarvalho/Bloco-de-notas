@@ -7,9 +7,8 @@ export default function Home({ navigation }) {
 
             <View style={styles.topoView}>
                 <TouchableOpacity>
-                    <FontAwesome name="search" size={24} color="black" />
+                    <FontAwesome name="search" size={30} color="black" />
                 </TouchableOpacity>
-
                 <TextInput
                     style={styles.textInput}
                 />
@@ -25,7 +24,7 @@ export default function Home({ navigation }) {
             <TouchableOpacity style={styles.BottonAdd}
                 onPress={() => navigation.navigate("Notas")}
             >
-                <Ionicons name="add-circle" size={30} color="black" />
+                <Ionicons name="add-circle" size={35} color="black" />
             </TouchableOpacity>
 
 
@@ -39,7 +38,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'space-between',
-        
+
     },
     topoView: {
         flexDirection: 'row-reverse',
@@ -48,7 +47,8 @@ const styles = StyleSheet.create({
     textInput: {
 
         width: 200,
-        borderWidth: 1
+        borderWidth: 1,
+        borderRadius: 5
     },
     BottonAdd: {
         position: 'relative',

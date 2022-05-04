@@ -12,20 +12,24 @@ export default function Config({ navigation }) {
                         todas as notas
                     </Text>
                     <TouchableOpacity>
-                        <SimpleLineIcons name="notebook" size={24} color="black" />
+                        <SimpleLineIcons name="notebook" size={35} color="black" />
                     </TouchableOpacity>
                 </View>
-
-                <TouchableOpacity>
-                    <AntDesign name="delete" size={24} color="black" />
-                </TouchableOpacity>
+                <View style={styles.containertop}>
+                    <Text>
+                        lixeira
+                    </Text>
+                    <TouchableOpacity>
+                        <AntDesign name="delete" size={35} color="black" />
+                    </TouchableOpacity>
+                </View>
             </View>
 
-            <View>
+            <View style={styles.containerStart}>
                 <TouchableOpacity
                     onPress={() => navigation.navigate("Home")}
                 >
-                    <Ionicons name="home" size={24} color="black" />
+                    <Ionicons name="home" size={35} color="black" />
 
                 </TouchableOpacity>
             </View>
@@ -41,7 +45,17 @@ const styles = StyleSheet.create({
     },
     containertop: {
         flexDirection: 'row-reverse',
-        alignContent: 'flex-start'
+        justifyContent: 'flex-end',
+        paddingLeft: 20,
+        paddingTop: 20
+    },
+    containerStart: {
+        flex: 1,
+        flexDirection: 'column-reverse',
+        justifyContent: 'flex-start',
+        paddingBottom: 20,
+        paddingLeft: 20
+
     }
 
 });
