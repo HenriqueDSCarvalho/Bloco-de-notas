@@ -1,5 +1,5 @@
 import { View, TouchableOpacity, StyleSheet, TextInput } from 'react-native';
-import {Ionicons, SimpleLineIcons} from '@expo/vector-icons';
+import { Ionicons, SimpleLineIcons } from '@expo/vector-icons';
 
 export default function Notas({ navigation }) {
     return (
@@ -20,11 +20,10 @@ export default function Notas({ navigation }) {
 
                 </TouchableOpacity>
             </View>
-            <View>
 
-                <TextInput />
-
-            </View>
+            
+                <TextInput  style={styles.TextInput}/>
+            
 
             <View style={styles.containerBottom}>
                 <TouchableOpacity
@@ -67,5 +66,12 @@ const styles = StyleSheet.create({
     containerleft: {
         flexDirection: 'row'
     },
+    TextInput: {
+        borderWidth: 1,
+        height: 450,
+        marginTop: 50,
+        marginBottom: 50,
+        textAlign: 'left'
+    }
 
 });
