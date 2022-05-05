@@ -25,6 +25,12 @@ export default function Home({ navigation }) {
                 style={styles.BottonAdd}
                 onPress={() => navigation.navigate("Notas")}>
 
+<<<<<<< HEAD
+=======
+            <TouchableOpacity style={styles.BottonAdd}
+                onPress={() => navigation.navigate("Notas")}
+            >
+>>>>>>> 768583e76bfd38b10bb85672aeb071dadef16f4a
                 <Ionicons name="add-circle" size={40} color="black" />
             </TouchableOpacity>
 
@@ -52,4 +58,10 @@ const styles = StyleSheet.create({
         position: 'relative',
         flexDirection: 'row-reverse',
     }
+<<<<<<< HEAD
 });
+=======
+
+
+});
+>>>>>>> 768583e76bfd38b10bb85672aeb071dadef16f4a
