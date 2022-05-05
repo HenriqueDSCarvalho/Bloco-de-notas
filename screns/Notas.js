@@ -1,5 +1,5 @@
 import { View, TouchableOpacity, StyleSheet, TextInput } from 'react-native';
-import { Ionicons, SimpleLineIcons } from '@expo/vector-icons';
+import {Ionicons, SimpleLineIcons} from '@expo/vector-icons';
 
 export default function Notas({ navigation }) {
     return (
@@ -9,23 +9,21 @@ export default function Notas({ navigation }) {
                 <TouchableOpacity
                     onPress={() => navigation.navigate("Home")}
                 >
-                    <Ionicons name="arrow-back-circle-sharp" size={35} color="black" />
+                    <Ionicons name="arrow-back-circle-sharp" size={40} color="black" />
                 </TouchableOpacity>
-
 
                 <TouchableOpacity
                     onPress={() => navigation.navigate("Config")}
                 >
-<<<<<<< HEAD
-                    <SimpleLineIcons name="menu" size={24} color="black" />
-=======
-                    <Ionicons name="menu-outline" size={35} color="black" />
->>>>>>> ba19ef5510b7ed7965c632512273687d62d40967
+                    <SimpleLineIcons name="menu" size={35} color="black" />
+
+
                 </TouchableOpacity>
             </View>
             <View>
-                <TextInput
-                />
+
+                <TextInput />
+
             </View>
 
             <View style={styles.containerBottom}>
@@ -42,12 +40,9 @@ export default function Notas({ navigation }) {
                     <TouchableOpacity>
                         <Ionicons name="return-up-forward" size={30} color="black" />
                     </TouchableOpacity>
-
                 </View>
 
             </View>
-
-
 
         </View>
     );
