@@ -22,7 +22,9 @@ export default function Notas({ navigation }) {
             </View>
 
             
-                <TextInput  style={styles.TextInput}/>
+                <TextInput  
+                multiline
+                style={styles.TextInput}/>
             
 
             <View style={styles.containerBottom}>
@@ -49,8 +51,9 @@ export default function Notas({ navigation }) {
 
 const styles = StyleSheet.create({
     container: {
-        padding: 15,
         flex: 1,
+        padding: 5,
+        marginBottom: 1,
         flexDirection: 'column',
         justifyContent: 'space-between'
     },
@@ -58,20 +61,23 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
+        
     },
     containerBottom: {
+        flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
+        marginTop: 20
     },
     containerleft: {
         flexDirection: 'row'
     },
     TextInput: {
         borderWidth: 1,
-        height: 450,
-        marginTop: 50,
-        marginBottom: 50,
-        textAlign: 'left'
+        textAlignVertical: 'bottom',
+        padding: 4,
+        height: '75%',        
+        
     }
 
 });

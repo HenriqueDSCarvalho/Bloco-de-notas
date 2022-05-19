@@ -1,7 +1,27 @@
-import { View, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, TextInput, Text } from 'react-native';
 import { Ionicons, SimpleLineIcons, FontAwesome } from '@expo/vector-icons';
+import React, { useState, useEffect } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Home({ navigation }) {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    useEffect(() => {
+        getUser();
+    }, []);
+
+    const getUser = async () => {
+        try {
+            const user = await AsyncStorage.getItem('user');
+            const parsedUser = JSON.parse(user);
+            setEmail(parsedUser.email);
+            setPassword(parsedUser.password);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
         <View style={styles.container}>
 
@@ -15,10 +35,16 @@ export default function Home({ navigation }) {
                     style={styles.textInput}
                 />
 
+
                 <TouchableOpacity onPress={() => navigation.navigate("Config")}>
                     <SimpleLineIcons name="menu" size={35} color="black" />
                 </TouchableOpacity>
 
+            </View>
+
+            <View>
+                <Text>Email: {email}</Text>
+                <Text>Senha: {password}</Text>
             </View>
 
             <TouchableOpacity
