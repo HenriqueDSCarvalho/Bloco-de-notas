@@ -13,22 +13,22 @@ const sqlDelete = 'DELETE FROM NOTAS id =?';
 
 export default class DataManeger {
 
-    async createTableNotas() {
+    static async createTableNotas() {
         (await db).transaction(tx => {
            tx.executeSql(sqlCreate); 
         });
     }
 
-    async openDatabase(){
+    static async openDatabase(){
         return await db;
     }
 
-    async createNotas(nota) {
+    static async createNotas(nota) {
         (await db).transaction(tx => {
             tx.executeSql(sqlInsert, [nota.nota, nota.tipo, nota.dataCriacao]);
         });
     }
-    async getNotas(id) {
+    static async getNotas(id) {
         let Notas = null;
         (await db).transaction(tx => {
             tx.executeSql(sqlSelect, [id], (_, {rows }) =>{
@@ -37,12 +37,12 @@ export default class DataManeger {
         });
         return Notas;
     }
-    async deleteNotas(id) {
+    static async deleteNotas(id) {
         (await db).transaction(tx => {
             tx.executeSql(sqlDelete, [id]);
         });
     }
-    async updateNotas(nota) {
+    static async updateNotas(nota) {
         (await db).transaction(tx => {
             tx.executeSql(sqlUpdate, [nota.nota, nota.tipo, nota.dataCriacao]);
         });

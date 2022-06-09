@@ -42,10 +42,6 @@ export default function Home({ navigation }) {
 
             </View>
 
-            <View>
-                <Text>Email: {email}</Text>
-                <Text>Senha: {password}</Text>
-            </View>
 
             <TouchableOpacity
                 style={styles.BottonAdd}

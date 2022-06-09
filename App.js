@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -7,13 +7,17 @@ import Notas from "./screns/Notas";
 import Config from "./screns/Config";
 import LoginScreen from './screns/LoginScreen';
 
+import DataBaseInit from './src/DB/DataBaseInit';
 
 const Stack = createNativeStackNavigator();
 
+
 export default function App() {
+
   useEffect(() => {
-    console.log('teste');
-  },[]); 
+    new DataBaseInit();
+  }, []);
+
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -21,8 +25,6 @@ export default function App() {
         <Stack.Screen name="Notas" component={Notas} />
         <Stack.Screen name="Config" component={Config} />
         <Stack.Screen name="Login" component={LoginScreen} />
-
-
       </Stack.Navigator>
     </NavigationContainer>
   );
