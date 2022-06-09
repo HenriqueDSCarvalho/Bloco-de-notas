@@ -8,7 +8,7 @@ export default function Home({ navigation }) {
     const [password, setPassword] = useState("");
 
     useEffect(() => {
-        getUser();
+    //getUser();
     }, []);
 
     const getUser = async () => {

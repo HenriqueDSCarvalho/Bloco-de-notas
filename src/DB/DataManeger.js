@@ -1,6 +1,6 @@
 import db from "./DataBaseInstance";
 
-const sqlCreate = 'CREATE TABLE IF NOT EXISTS NOTAS (id INTERGER PRIMARY KEY AUTOINCREMENT,nota VARCHAR(200) , tipo VARCHAR(200), dataCriacao VARCHAR(200), dataAtualizacao datetime)';
+const sqlCreate = 'CREATE TABLE IF NOT EXISTS NOTAS (id INTERGER PRIMARY KEY AUTOINCREMENT,nota VARCHAR(200), tipo VARCHAR(200), dataCriacao VARCHAR(200), dataAtualizacao datetime)';
 
 const sqlInsert = 'INSERT INTO NOTAS (nota, tipo, dataCriacao) VALUES (?,?,?)';
 
@@ -10,32 +10,40 @@ const sqlUpdate = 'UPDATE NOTAS SET nota = ?, tipo = ?, dataAtualizacao = ?';
 
 const sqlDelete = 'DELETE FROM NOTAS id =?';
 
-
 export default class DataManeger {
 
     static async createTableNotas() {
-        (await db).transaction(tx => {
-           tx.executeSql(sqlCreate); 
-        });
+        try {
+            (await db).transaction(tx => {
+                tx.executeSql(sqlCreate);
+            });
+        } catch (error) {
+            console.log(error);
+
+        }
     }
 
-    static async openDatabase(){
+    static async openDatabase() {
         return await db;
     }
 
     static async createNotas(nota) {
         (await db).transaction(tx => {
-            tx.executeSql(sqlInsert, [nota.nota, nota.tipo, nota.dataCriacao]);
+            try {
+                tx.executeSql(sqlInsert, [nota.nota, nota.tipo, nota.dataCriacao]);
+            } catch (error) {
+                console.log(error);
+            }
         });
     }
     static async getNotas(id) {
-        let Notas = null;
+        let nota = null;
         (await db).transaction(tx => {
-            tx.executeSql(sqlSelect, [id], (_, {rows }) =>{
-                user = rows._array[0];
+            tx.executeSql(sqlSelect, [id], (_, { rows }) => {
+                nota = rows._array[0];
             });
         });
-        return Notas;
+        return nota;
     }
     static async deleteNotas(id) {
         (await db).transaction(tx => {
@@ -47,5 +55,5 @@ export default class DataManeger {
             tx.executeSql(sqlUpdate, [nota.nota, nota.tipo, nota.dataCriacao]);
         });
     }
-    
+
 }
