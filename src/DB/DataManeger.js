@@ -1,18 +1,18 @@
 import db from "./DataBaseInstance";
 
-const sqlCreate = 'CREATE TABLE IF NOT EXISTS NOTAS (id INTERGER PRIMARY KEY AUTOINCREMENT,nota VARCHAR(200), tipo VARCHAR(200), dataCriacao VARCHAR(200), dataAtualizacao datetime)';
+const sqlCreate = 'CREATE TABLE IF NOT EXISTS USER (id INTERGER PRIMARY KEY AUTOINCREMENT,email VARCHAR(200), password VARCHAR(200)';
 
-const sqlInsert = 'INSERT INTO NOTAS (nota, tipo, dataCriacao) VALUES (?,?,?)';
+const sqlInsert = 'INSERT INTO USER (email, password) VALUES (?,?)';
 
-const sqlSelect = 'SELECT * FROM NOTAS WHERE id = ?';
+const sqlSelect = 'SELECT * FROM USER WHERE id = ?';
 
-const sqlUpdate = 'UPDATE NOTAS SET nota = ?, tipo = ?, dataAtualizacao = ?';
+const sqlUpdate = 'UPDATE USER SET email = ?, password = ? WHERE id = ?';
 
-const sqlDelete = 'DELETE FROM NOTAS id =?';
+const sqlDelete = 'DELETE FROM USER WHERE id = ?';
 
 export default class DataManeger {
 
-    static async createTableNotas() {
+    static async createTableUser() {
         try {
             (await db).transaction(tx => {
                 tx.executeSql(sqlCreate);
@@ -27,32 +27,32 @@ export default class DataManeger {
         return await db;
     }
 
-    static async createNotas(nota) {
+    static async createUser(user) {
         (await db).transaction(tx => {
             try {
-                tx.executeSql(sqlInsert, [nota.nota, nota.tipo, nota.dataCriacao]);
+                tx.executeSql(sqlInsert, [user.email, user.password]);
             } catch (error) {
                 console.log(error);
             }
         });
     }
-    static async getNotas(id) {
-        let nota = null;
+    static async getUser(id) {
+        let user = null;
         (await db).transaction(tx => {
             tx.executeSql(sqlSelect, [id], (_, { rows }) => {
-                nota = rows._array[0];
+                user = rows._array[0];
             });
         });
-        return nota;
+        return user;
     }
-    static async deleteNotas(id) {
+    static async deleteUser(id) {
         (await db).transaction(tx => {
             tx.executeSql(sqlDelete, [id]);
         });
     }
-    static async updateNotas(nota) {
+    static async updateUser(user) {
         (await db).transaction(tx => {
-            tx.executeSql(sqlUpdate, [nota.nota, nota.tipo, nota.dataCriacao]);
+            tx.executeSql(sqlUpdate, [user.email, user.password]);
         });
     }
 

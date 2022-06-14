@@ -3,23 +3,23 @@ import db from "./DataBaseInstance";
 export default class DataBaseInit {
     seeder = [
         {
-            nota: 'faculdade',
-            tipo: 'normal',
-            dataCriacao: 'hoje'
+            name: 'joao',
+            email: 'h96656565@sdkjn.com',
+            password: '123456'
         },
         {
-            nota: 'contas',
-            tipo: 'importante',
-            dataCriacao: 'hoje'
-        }
-    ]
+            name: 'joao',
+            email: 'h96656565@sdkjn.com',
+            password: '123456'
+        },
+    ];
     constructor() {
         this.initDb();
     }
     initDb() {
         const sql = [
-            DataManeger.createTableNotas(),
-            DataManeger.createNotas(this.seeder[0]),
+            DataManeger.createTableUser(),
+            DataManeger.createUser(this.seeder[0]),
 
         ];
         db.transaction(tx => {
