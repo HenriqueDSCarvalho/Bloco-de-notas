@@ -1,6 +1,6 @@
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { SimpleLineIcons, AntDesign, Ionicons } from '@expo/vector-icons';
-
+import { View, Text, TouchableOpacity } from 'react-native';
+import { SimpleLineIcons, Entypo, Ionicons } from '@expo/vector-icons';
+import styles from './ConfigStyle';
 
 export default function Config({ navigation }) {
     return (
@@ -17,10 +17,12 @@ export default function Config({ navigation }) {
                 </View>
                 <View style={styles.containertop}>
                     <Text>
-                        lixeira
+                        Login
                     </Text>
-                    <TouchableOpacity>
-                        <AntDesign name="delete" size={35} color="black" />
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate("Login")}
+                    >
+                        <Entypo name="login" size={35} color="black" />
                     </TouchableOpacity>
                 </View>
             </View>
@@ -38,24 +40,3 @@ export default function Config({ navigation }) {
     );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-
-    },
-    containertop: {
-        flexDirection: 'row-reverse',
-        justifyContent: 'flex-end',
-        paddingLeft: 20,
-        paddingTop: 20
-    },
-    containerStart: {
-        flex: 1,
-        flexDirection: 'column-reverse',
-        justifyContent: 'flex-start',
-        paddingBottom: 20,
-        paddingLeft: 20
-
-    }
-
-});

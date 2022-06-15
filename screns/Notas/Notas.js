@@ -1,5 +1,6 @@
-import { View, TouchableOpacity, StyleSheet, TextInput } from 'react-native';
-import { Ionicons, SimpleLineIcons } from '@expo/vector-icons';
+import { View, TouchableOpacity, TextInput } from 'react-native';
+import { Ionicons, SimpleLineIcons, AntDesign } from '@expo/vector-icons';
+import styles from './NotasStyle';
 
 export default function Notas({ navigation }) {
     return (
@@ -21,17 +22,21 @@ export default function Notas({ navigation }) {
                 </TouchableOpacity>
             </View>
 
-            
-                <TextInput  
+
+            <TextInput
                 multiline
-                style={styles.TextInput}/>
-            
+                style={styles.TextInput} />
+
 
             <View style={styles.containerBottom}>
                 <TouchableOpacity
                     onPress={() => navigation.navigate("Home")}
                 >
                     <Ionicons name="home" size={35} color="black" />
+                </TouchableOpacity>
+
+                <TouchableOpacity>
+                    <AntDesign name="save" size={35} color="black" />
                 </TouchableOpacity>
 
                 <View style={styles.containerleft}>
@@ -49,35 +54,3 @@ export default function Notas({ navigation }) {
     );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        padding: 5,
-        marginBottom: 1,
-        flexDirection: 'column',
-        justifyContent: 'space-between'
-    },
-    containerTop: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        
-    },
-    containerBottom: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginTop: 20
-    },
-    containerleft: {
-        flexDirection: 'row'
-    },
-    TextInput: {
-        borderWidth: 1,
-        textAlignVertical: 'bottom',
-        padding: 4,
-        height: '75%',        
-        
-    }
-
-});

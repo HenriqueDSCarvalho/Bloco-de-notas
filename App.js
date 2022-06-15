@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 
-import Home from "./screns/Home";
-import Notas from "./screns/Notas";
-import Config from "./screns/Config";
-import LoginScreen from './screns/LoginScreen';
+import Home from "./screns/Home/Home";
+import Notas from "./screns/Notas/Notas";
+import Config from "./screns/Config/Config";
+import LoginScreen from './screns/Login/LoginScreen';
 
 import DataBaseInit from './src/DB/DataBaseInit';
 

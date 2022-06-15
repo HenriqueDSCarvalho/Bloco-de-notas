@@ -1,8 +1,7 @@
-import { View, Text, StyleSheet, Image, TextInput, Button } from 'react-native';
-import download from '../assets/download.png';
+import { View, Text, TextInput, Button } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { useState } from 'react';
-import { createIconSetFromFontello } from '@expo/vector-icons';
+import styles from './LoginStyle';
 
 export default function LoginScreen({ navigation }) {
     const [email, setEmail] = useState("");
@@ -36,10 +35,7 @@ export default function LoginScreen({ navigation }) {
     }
     return (
         <View style={styles.container}>
-            <View>
-                <Image source={download} style={styles.logo}
-                />
-            </View>
+           
             <Text style={styles.title}>
                 login
             </Text>
@@ -53,38 +49,3 @@ export default function LoginScreen({ navigation }) {
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: "center"
-    },
-    title: {
-        fontSize: 30,
-        fontWeight: 'bold'
-    },
-    logo: {
-        width: 200,
-        height: 200
-    },
-    input: {
-        marginTop: 20,
-        height: 50,
-        width: 300,
-        borderColor: '#ccc',
-        borderWidth: 1,
-        borderRadius: 3,
-        padding: 10
-
-    },
-    buttonContainer: {
-        marginTop: 20,
-        width: '90%',
-        height: 150,
-    },
-    loginButton: {
-        width: '60%'
-    }
-
-});
