@@ -1,7 +1,7 @@
 import DataManeger from "./DataManeger";
 import db from "./DataBaseInstance";
 export default class DataBaseInit {
-    seeder = [
+    login = [
         {
             name: 'joao',
             email: 'h96656565@sdkjn.com',
@@ -19,7 +19,7 @@ export default class DataBaseInit {
     initDb() {
         const sql = [
             DataManeger.createTableUser(),
-            DataManeger.createUser(this.seeder[0]),
+            DataManeger.createUser(this.login[0]),
 
         ];
         db.transaction(tx => {
