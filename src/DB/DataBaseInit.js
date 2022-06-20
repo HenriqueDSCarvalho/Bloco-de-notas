@@ -1,18 +1,21 @@
 import DataManeger from "./DataManeger";
 import db from "./DataBaseInstance";
+
 export default class DataBaseInit {
     login = [
         {
-            name: 'joao',
-            email: 'h96656565@sdkjn.com',
+            name: 'jose',            
+            email: 'jose123@gmail.com',
             password: '123456'
         },
         {
-            name: 'joao',
-            email: 'h96656565@sdkjn.com',
-            password: '123456'
+            name: 'henrique',
+            email: 'henrique123@gmail.com',
+            password: '654321'
         },
+
     ];
+ 
     constructor() {
         this.initDb();
     }
@@ -20,7 +23,7 @@ export default class DataBaseInit {
         const sql = [
             DataManeger.createTableUser(),
             DataManeger.createUser(this.login[0]),
-
+          
         ];
         db.transaction(tx => {
             sql.forEach(query => {

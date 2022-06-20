@@ -10,7 +10,6 @@ const sqlUpdate = 'UPDATE USER SET email = ?, password = ? WHERE id = ?';
 
 const sqlDelete = 'DELETE FROM USER WHERE id = ?';
 
-
 export default class DataManeger {
 
     static async createTableUser() {
@@ -23,9 +22,7 @@ export default class DataManeger {
 
         }
     }
-    
 
-   
     static async openDatabase() {
         return await db;
     }
@@ -40,7 +37,6 @@ export default class DataManeger {
         });
     }
 
-    
     static async getUser(id) {
         let user = null;
         (await db).transaction(tx => {
@@ -50,8 +46,6 @@ export default class DataManeger {
         });
         return user;
     }
-   
-
 
     static async deleteUser(id) {
         (await db).transaction(tx => {
@@ -59,13 +53,9 @@ export default class DataManeger {
         });
     }
 
-   
     static async updateUser(user) {
         (await db).transaction(tx => {
             tx.executeSql(sqlUpdate, [user.email, user.password]);
         });
     }
-
-  
-
 }

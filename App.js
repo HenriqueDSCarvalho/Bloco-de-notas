@@ -15,16 +15,16 @@ const Stack = createNativeStackNavigator();
 export default function App() {
 
   useEffect(() => {
-    new DataBaseInit();
+    new DataBaseInit(); 
   }, []);
 
   return (
     <NavigationContainer>
       <Stack.Navigator>
+      <Stack.Screen name="Notas" component={Notas} />
+      <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Notas" component={Notas} />
         <Stack.Screen name="Config" component={Config} />
-        <Stack.Screen name="Login" component={LoginScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
