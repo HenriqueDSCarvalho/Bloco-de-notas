@@ -12,7 +12,6 @@ import DBInitNotas from './src/DB/DBInitNotas';
 
 const Stack = createNativeStackNavigator();
 
-
 export default function App() {
 
   useEffect(() => {
@@ -24,8 +23,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Config" component={Config} />
         <Stack.Screen name="Notas" component={Notas} />
+        <Stack.Screen name="Config" component={Config} />
         <Stack.Screen name="Login" component={LoginScreen} />
       </Stack.Navigator>
     </NavigationContainer>

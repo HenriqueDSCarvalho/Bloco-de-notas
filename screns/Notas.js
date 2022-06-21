@@ -10,7 +10,7 @@ export default function Notas({ navigation }) {
 
         const textoLength = texto.length;
 
-        if (textoLength > 0) {
+        if (textoLength >= 0) {
             const saveTexto = {
                 texto: texto
             }
@@ -45,7 +45,6 @@ export default function Notas({ navigation }) {
                 >
                     <SimpleLineIcons name="menu" size={35} color="#ffffff" />
 
-
                 </TouchableOpacity>
             </View>
 
@@ -53,7 +52,6 @@ export default function Notas({ navigation }) {
                 multiline
                 style={styles.TextInput}
                 onChangeText={(e) => setTexto(e)}
-
             />
 
             <View style={styles.containerBottom}>
@@ -97,7 +95,6 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        
     },
     containerBottom: {
         flex: 1,
@@ -114,7 +111,6 @@ const styles = StyleSheet.create({
         padding: 4,
         height: '75%',
         borderColor: '#ffffff',
-        color: '#ffffff'     
-    }
-
+        color: '#ffffff'
+    },
 });

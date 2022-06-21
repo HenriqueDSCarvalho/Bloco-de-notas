@@ -2,13 +2,14 @@ import { View, TouchableOpacity, TextInput, StyleSheet } from 'react-native';
 import { Ionicons, SimpleLineIcons, FontAwesome } from '@expo/vector-icons';
 import React, { useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import InputText from '../src/DB/Components.js/InputText';
 
 export default function Home({ navigation }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     useEffect(() => {
-       getUser();
+        getUser();
     }, []);
 
     const getUser = async () => {
@@ -31,17 +32,13 @@ export default function Home({ navigation }) {
                     <FontAwesome name="search" size={35} color="#ffffff" />
                 </TouchableOpacity>
 
-                <TextInput
-                    style={styles.textInput}
-                />
-
+                <InputText />
 
                 <TouchableOpacity onPress={() => navigation.navigate("Config")}>
                     <SimpleLineIcons name="menu" size={35} color="#ffffff" />
                 </TouchableOpacity>
 
             </View>
-
 
             <TouchableOpacity
                 style={styles.BottonAdd}
